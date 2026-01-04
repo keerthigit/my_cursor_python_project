@@ -6,7 +6,7 @@ class ClaimService:
         self._claims = {}
         self._next_id = 1
     
-    def create_claim(self, claim_type, amount, status, created_at):
+    def create_claim(self, claim_type, amount, status, created_at, created_by):
         """
         Create a new claim and store it.
         
@@ -15,6 +15,7 @@ class ClaimService:
             amount: Amount of the claim
             status: Status of the claim
             created_at: Creation timestamp
+            created_by: User who created the claim
             
         Returns:
             Claim: The created claim object
@@ -27,7 +28,8 @@ class ClaimService:
             claim_type=claim_type,
             amount=amount,
             status=status,
-            created_at=created_at
+            created_at=created_at,
+            created_by=created_by
         )
         
         self._claims[claim_id] = claim

@@ -9,6 +9,7 @@ class ClaimCreate(BaseModel):
     amount: float = Field(..., gt=0, description="Amount of the claim")
     status: str = Field(..., description="Status of the claim")
     created_at: datetime = Field(default_factory=datetime.now, description="Creation timestamp")
+    created_by: str = Field(..., description="User who created the claim")
 
 
 class ClaimResponse(BaseModel):
@@ -18,6 +19,7 @@ class ClaimResponse(BaseModel):
     amount: float
     status: str
     created_at: datetime
+    created_by: str
 
     class Config:
         from_attributes = True

@@ -37,7 +37,8 @@ async def create_claim(claim_data: ClaimCreate):
             claim_type=claim_data.claim_type,
             amount=claim_data.amount,
             status=claim_data.status,
-            created_at=claim_data.created_at
+            created_at=claim_data.created_at,
+            created_by=claim_data.created_by
         )
         repository.create(claim)
         return ClaimResponse(
@@ -45,7 +46,8 @@ async def create_claim(claim_data: ClaimCreate):
             claim_type=claim.claim_type,
             amount=claim.amount,
             status=claim.status,
-            created_at=claim.created_at
+            created_at=claim.created_at,
+            created_by=claim.created_by
         )
     except Exception as e:
         raise HTTPException(
@@ -69,7 +71,8 @@ async def get_all_claims():
             claim_type=claim.claim_type,
             amount=claim.amount,
             status=claim.status,
-            created_at=claim.created_at
+            created_at=claim.created_at,
+            created_by=claim.created_by
         )
         for claim in claims
     ]
@@ -100,7 +103,8 @@ async def get_claim(claim_id: int):
         claim_type=claim.claim_type,
         amount=claim.amount,
         status=claim.status,
-        created_at=claim.created_at
+        created_at=claim.created_at,
+        created_by=claim.created_by
     )
 
 
