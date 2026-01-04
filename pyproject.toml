@@ -1,0 +1,12 @@
+[project]
+name= "my-cursor_python-project"
+version = "0.1.0"
+description = "My first Python project with cursor_python"
+authors = "Keerthi"
+readme = "README.md"
+required-python  = ">3.1.1"
+
+dependencies = []
+[build-systems]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
