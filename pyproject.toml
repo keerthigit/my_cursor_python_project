@@ -1,12 +1,20 @@
-[project]
-name= "my-cursor_python-project"
-version = "0.1.0"
-description = "My first Python project with cursor_python"
-authors = "Keerthi"
-readme = "README.md"
-required-python  = ">3.1.1"
 
-dependencies = []
-[build-systems]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+[tool.poetry]
+name = "my_cursor_python_project"
+version = "0.1.0"
+description = "A FastAPI project to process insurance claims"
+authors = ["Your Name <you@example.com>"]
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.100.0"
+uvicorn = "^0.24.0"
+pydantic = "^2.2.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.5.1"]
+build-backend = "poetry.core.masonry.api"
