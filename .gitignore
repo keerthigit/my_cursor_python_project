@@ -1,6 +1,8 @@
-#Virtual Environment 
+# Python virtual environment
 .venv/
+venv/
 .env
+source/
 
 #Python cache
 __pycache__/
@@ -13,3 +15,5 @@ __pycache__/
 
 #OS Files
 .DS_Store
+
+
